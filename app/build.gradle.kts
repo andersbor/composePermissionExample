@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.example.permissionexample"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.permissionexample"
@@ -56,8 +56,4 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-
-    //implementation("androidx.permission:permission-ktx:1.0.0")
-
-    //implementation("androidx.fragment:fragment-compose:1.8.4")
 }

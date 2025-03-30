@@ -33,7 +33,7 @@ class MainActivity : ComponentActivity() {
                         modifier = Modifier.padding(innerPadding)
                     ) {
                         Button(onClick = {
-                            ask(Manifest.permission.ACCESS_FINE_LOCATION, context)
+                            askForPermission(Manifest.permission.ACCESS_FINE_LOCATION, context)
                         }) {
                             Text("Request Permission")
                         }
@@ -43,12 +43,11 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    private fun ask(permission: String, context: Context) {
+    private fun askForPermission(permission: String, context: Context) {
         //requestPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
         when {
-            ContextCompat.checkSelfPermission(
-                context, permission
-            ) == PackageManager.PERMISSION_GRANTED -> {
+            ContextCompat.checkSelfPermission(context, permission)
+                    == PackageManager.PERMISSION_GRANTED -> {
                 // You can use the API that requires the permission.
                 Log.d("PERMISSION STUFF", "Permission already granted")
                 getAndUseLocation()
